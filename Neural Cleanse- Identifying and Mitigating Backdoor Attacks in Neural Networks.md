@@ -31,7 +31,7 @@ Bottom figure shows the infected model, where the backdoor changes decision boun
 
 So by measuring the minimum amount of perturbation necessary to change all inputs from each region to the target region, we can detect these shortcuts. But what is the smallest delta necessary to transform any input whose label is B or C to an input with label A?
 
-![Screen Shot 2019-11-22 at 4.24.06 PM.png-90.4kB = 10*10][2]
+![Screen Shot 2019-11-22 at 4.24.06 PM.png-90.4kB = 10*10][2]{:height="50%" width="50%"}
 
 According to this observation, we know in a region with a trigger shortcut, no matter where an input lies in the space, the amount of perturbation needed to classify this input as A is bounded by the size of the trigger.
 
