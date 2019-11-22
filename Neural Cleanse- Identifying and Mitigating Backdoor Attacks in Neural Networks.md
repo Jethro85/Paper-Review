@@ -1,4 +1,4 @@
-﻿# Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks
+# Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks
 
 Label: Detection, Mitigation  
 
@@ -23,7 +23,7 @@ In this paper, the key intuition lies in how to detect and identify backdoor.
 
 Backdoor triggers creat "shortcuts" from within regions of space belonging to a label into the region belonging to A. So detecting these 'shortcuts' makes the backdoor detection feasible.  
 
-![Screen Shot 2019-11-22 at 3.31.43 PM.png-257.3kB][1]
+![Screen Shot 2019-11-22 at 3.31.43 PM.png-257.3kB = 100*100][1]
 
 Top figure shows a clean model, where more modification is needed to move samples of B and C across decision boundaries to be misclassified into label A.  
 
