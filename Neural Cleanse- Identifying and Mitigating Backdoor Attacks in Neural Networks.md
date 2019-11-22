@@ -1,9 +1,9 @@
 ﻿# Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks
 
-标签（空格分隔）： Detection Mitigation
+标签（空格分隔）： Detection Mitigation  
 
 ---
-paper: https://sites.cs.ucsb.edu/~bolunwang/assets/docs/backdoor-sp19.pdf
+paper: https://sites.cs.ucsb.edu/~bolunwang/assets/docs/backdoor-sp19.pdf  
 code: https://github.com/bolunwang/backdoor
 
 ## SUMMARY
