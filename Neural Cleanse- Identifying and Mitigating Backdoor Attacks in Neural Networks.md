@@ -9,9 +9,9 @@ code: https://github.com/bolunwang/backdoor
 ## SUMMARY
 In this paper, they make the following contributions to the defense
 against backdoors in neural networks:
-• They propose a novel technique for **detecting and reverse engineering hidden triggers** embedded inside deep neural networks.
-• They implement and validate technique on a variety of neural network applications, including handwritten digit recognition, traffic sign recognition, facial recognition with large number of labels, and facial recognition using transfer learning. They reproduce BadNets and Trojan attack and use them in experiments.
-• They develop and validate via detailed experiments three methods of mitigation: 
+ - They propose a novel technique for **detecting and reverse engineering hidden triggers** embedded inside deep neural networks.
+ - They implement and validate technique on a variety of neural network applications, including handwritten digit recognition, traffic sign recognition, facial recognition with large number of labels, and facial recognition using transfer learning. They reproduce BadNets and Trojan attack and use them in experiments.
+ - They develop and validate via detailed experiments three methods of mitigation: 
 i) an early filter for adversarial inputs that identifies inputs with a known trigger
 ii) a model patching algorithm based on neuron pruning
 iii) a model patching algorithm based on unlearning.
