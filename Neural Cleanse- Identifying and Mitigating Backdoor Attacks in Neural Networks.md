@@ -60,6 +60,30 @@ f(·) is the DNN’s prediction function. ℓ(·) is the loss
 function measuring the error in classification, which is cross
 entropy in our experiment. By using Adam optimizer to solve the above optimization, we can get the reverse triggers. 
 
+### 3. Mitigation Methodology
+In the paper, they describe two complementary techniques. First, they create a filter for adversarial input that identifies and rejects any input with the trigger. Second, they patch the DNN using two methods: neuron pruning, and unlearning, to make DNN nonresponsive against the detected backdoor triggers.
+
+#### 3.1 Filter for Detecting Adversarial Inputs
+They build a filter based on neuron activation profile for the reversed trigger. This is measured as the average neuron activations of the top 1% of neurons in the second to last layer. Given some input, the filter identifies potential adversarial inputs as those with activation profiles higher than a certain threshold. 
+
+#### 3.2 Patching via Neuron Pruning
+target the second to last layer, and prune neurons by order of highest rank first(i.e. prioritizing those that show biggest activation gap between clean and adversarial inputs).
+
+#### 3.3 Patching via Unlearning
+use the reversed trigger to train the infected DNN to recognize correct labels even when the trigger is present. 
+
+## EXPERIMENTS
+To evaluate against BadNets, they use four tasks and inject backdoor using their proposed technique: (1) Hand-written Digit Recognition (MNIST), (2) Traffic Sign Recognition (GTSRB), (3) Face Recognition with large number of labels (YouTube Face), and (4) Face Recognition using a complex model (PubFig). For Trojan Attack, they use two already infected Face Recognition models used in the original work and shared by authors, Trojan Square, and Trojan Watermark.
+
+### Detection Performance 
+Results show that all infected models have anomaly index larger than 3, indicating > 99.7% probability of being an infected model. This means that the methodology can detect an infected DNN.
+
+At the same time, their approach can also determine which labels are infected.
+
+### Mitigation Performance
+Patching via neuron pruning works well on the backdoors mitigation of BadNets, but works bad on Trojan Models. The reason is that neuron activations do a poor job of matching the reverse engineered triggers and the originals, so pruning cannot work well. 
+
+Patching via Unlearning works well on backdoors mitigation of Badnets and Trojan Models. In this approach, they use fine-tune for 1 epoch. Results show that after fine-tune with clean images, attack success rates of Trojan Attack models down to 10.91% and 0% for Trojan Square, and Trojan Watermark respectively. So Trojan Attack models, with their highly targeted re-tuning of specific neurons, are much more sensitive to unlearning.  A clean input that helps reset a few key neurons disables the attack. In contrast, BadNets injects backdoors by updating all layers using a poisoned dataset, and seems to require significantly more work to retrain and mitigate the backdoor.
 
   [1]: http://static.zybuluo.com/Shenao/exbnpmklrwbsse5ndupdabr9/Screen%20Shot%202019-11-22%20at%203.31.43%20PM.png
   [2]: http://static.zybuluo.com/Shenao/ytlpeyfgdi3k4548k2s2puet/Screen%20Shot%202019-11-22%20at%204.24.06%20PM.png
