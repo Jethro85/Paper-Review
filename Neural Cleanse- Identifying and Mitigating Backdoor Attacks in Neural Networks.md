@@ -63,14 +63,15 @@ entropy in our experiment. By using Adam optimizer to solve the above optimizati
 ### 3. Mitigation Methodology
 In the paper, they describe two complementary techniques. First, they create a filter for adversarial input that identifies and rejects any input with the trigger. Second, they patch the DNN using two methods: neuron pruning, and unlearning, to make DNN nonresponsive against the detected backdoor triggers.
 
-#### 3.1 Filter for Detecting Adversarial Inputs
+#### 3.1  Filter for Detecting Adversarial Inputs
 They build a filter based on neuron activation profile for the reversed trigger. This is measured as the average neuron activations of the top 1% of neurons in the second to last layer. Given some input, the filter identifies potential adversarial inputs as those with activation profiles higher than a certain threshold. 
 
-#### 3.2 Patching via Neuron Pruning
+#### 3.2  Patching via Neuron Pruning
 target the second to last layer, and prune neurons by order of highest rank first(i.e. prioritizing those that show biggest activation gap between clean and adversarial inputs).
 
-#### 3.3 Patching via Unlearning
-use the reversed trigger to train the infected DNN to recognize correct labels even when the trigger is present. 
+#### 3.3  Patching via Unlearning
+use the reversed trigger to train the infected DNN to recognize correct labels even when the trigger is present.   
+
 
 ## EXPERIMENTS
 To evaluate against BadNets, they use four tasks and inject backdoor using their proposed technique: (1) Hand-written Digit Recognition (MNIST), (2) Traffic Sign Recognition (GTSRB), (3) Face Recognition with large number of labels (YouTube Face), and (4) Face Recognition using a complex model (PubFig). For Trojan Attack, they use two already infected Face Recognition models used in the original work and shared by authors, Trojan Square, and Trojan Watermark.
