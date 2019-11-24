@@ -55,6 +55,32 @@ Similar to the optimization problem alone defined in the Equation(1), for any gi
 
 acc(att) indicates the misclassification rate, observed when we insert that resolved trigger into a set of clean images and then feed these contaminated images into the learning model f(·). acc(exp) represents the classification accuracy, observed when we feed the explanation(i.e.,important features alone) of the contaminated images into f(·). acc(crop) denotes the classification accuracy, observed when we crop resolved triggers from the corresponding contaminated images and then input the cropped images to f(·). For the first two terms in the equation above, they represent the sparsity measure indicating non-zero elements in the trigger and the smoothness measure of the trigger, respectively.
 
+## EXPERIMENTS
+They evaluate the effectiveness of the proposed technique by answering the following questions.  
+(1) Does the effectiveness of TABOR vary when the size, position, and shape of trojan backdoorschange?   
+(2) Does the dimensionality of the input space tied to a target model influence the effectiveness of TABOR?   
+(3) How effectively does TABOR demonstrate when there are multiple triggers inserted into target models?  
+(4) Does the complexity of the target model influence the effect of trojan backdoor detection?   
+(5) How sensitive is TABOR to the hyperparameters?   
+(6) How effectiveis TABOR for different methods ofinserting a trojan backdoor?   
+(7) In comparison with the state-of-the-art technique – Neural Cleanse, how well does TABOR perform trojan detection and trigger restoration under the settings above?
+
+The **main results** are shown in the following picture:
+![1.JPG-464.9kB][9]
+For learning models that enclose a trojan backdoor with a different size, in a different shape or at a different location, Neural Cleanse oftentimes cannot point out the trojan existence. Even if it sometimes points out trojan existence, in one of the cases, it fails to pinpoint the trigger truly inserted. For a clean model carrying no trojan backdoor, Neural Cleanse mistakenly reports the model is implanted with a trojan backdoor. 
+
+There are two reasons:  
+
+1. In different adversarial subspaces, the total number of adversarial samples might vary, influencing the stability of Neural Cleanse in trojan detection.
+
+2.  regardless of whether a backdoor exists in a learning model, the optimization-based technique could always find a local optimal solution for a corresponding optimization problem and thus deem it as a reasonably good local optimum. 
+
+In comparison with the extremely poor performance Neural Cleanse exhibits in the setting of trigger shape/size/location variations, **TABOR demonstrates a significant improvement in trojan backdoor detection.** 
+
+The performance of TABOR from the fidelity aspect is also better. As is illustrated in Table 1, overall, TABOR demonstrates higher measures in precision, recall, and F-score than Neural Cleanse. This indicates **TABOR could restore a trojan backdoor with higher fidelity.**
+
+What's more, from the table we can see they perform trojan detection on learning models taking input in different dimensionalities (ImageNet with 224×224 and GTSRB with 32×32), for both Neural Cleanse and TABOR, **the difference in input dimensionality has less impact upon their backdoor detection**.
+
 
   [1]: http://static.zybuluo.com/Shenao/5v0y9fd6oh9yjd7bmjy8hh13/1.JPG
   [2]: http://static.zybuluo.com/Shenao/4ofhqd09ojtciu6c6s3i7uwk/Capture.JPG
@@ -64,3 +90,4 @@ acc(att) indicates the misclassification rate, observed when we insert that reso
   [6]: http://static.zybuluo.com/Shenao/djqysab6t1xu1qhjg5c0pubc/1.JPG
   [7]: http://static.zybuluo.com/Shenao/q9c8jzxfgqas3yj3s9orssmc/1.JPG
   [8]: http://static.zybuluo.com/Shenao/jsgzftnjnnruj3oydo55apcv/1.JPG
+  [9]: http://static.zybuluo.com/Shenao/v2fhpvwswzi05dp56bm9h0oh/1.JPG
