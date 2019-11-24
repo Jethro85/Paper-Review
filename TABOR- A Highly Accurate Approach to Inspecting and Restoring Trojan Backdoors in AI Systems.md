@@ -67,6 +67,7 @@ They evaluate the effectiveness of the proposed technique by answering the follo
 
 The **main results** are shown in the following picture:
 ![1.JPG-464.9kB][9]
+
 For learning models that enclose a trojan backdoor with a different size, in a different shape or at a different location, Neural Cleanse oftentimes cannot point out the trojan existence. Even if it sometimes points out trojan existence, in one of the cases, it fails to pinpoint the trigger truly inserted. For a clean model carrying no trojan backdoor, Neural Cleanse mistakenly reports the model is implanted with a trojan backdoor. 
 
 There are two reasons:  
@@ -90,4 +91,4 @@ What's more, from the table we can see they perform trojan detection on learning
   [6]: http://static.zybuluo.com/Shenao/djqysab6t1xu1qhjg5c0pubc/1.JPG
   [7]: http://static.zybuluo.com/Shenao/q9c8jzxfgqas3yj3s9orssmc/1.JPG
   [8]: http://static.zybuluo.com/Shenao/jsgzftnjnnruj3oydo55apcv/1.JPG
-  [9]: http://static.zybuluo.com/Shenao/v2fhpvwswzi05dp56bm9h0oh/1.JPG
+  [9]: http://static.zybuluo.com/Shenao/2quiyl45j7eji0h5pij2e757/1.JPG
