@@ -47,10 +47,33 @@ Once the backdoor trigger is injected into the Teacher model, the attacker remov
 
 ### 3. Optimizing Trigger Generation & Injection (for step 2 and step 3)
 
+**Target-dependent Trigger Generation**  
+Given an input metric x, a poisoned sample of x is defined by:
+A(x,m, ∆) = (1 − m) ◦ x + m ◦ ∆   
+
+To generate a latent trigger against yt, the attacker searches for the trigger pattern ∆ that minimizes the difference between any poisoned non-target sample A(x,m, ∆), x ∈ X(\yt) and any clean target sample xt ∈ X(yt), in terms of their intermediate representation at layer Kt:  
+
+![Screen Shot 2019-11-25 at 6.40.48 PM.png-29.1kB][3]
+
+D(.) measures the dissimilarity between two internal representations in the feature space. Next, Fkθ(x) represents the intermediate representation for input x at the kth layer of the Teacher model Fθ(.). Finally, X(yt) and X(\yt) represent the target and non-target training data in Step 1. The output of the above optimization is ∆opt , the latent backdoor trigger against yt. 
+
+**Backdoor Injection**
+Let θ represent the weights of the present Teacher model Fθ(x). Let ϕθ represent the recorded intermediate representation of class yt at layer Kt of the present model Fθ(x), and ϕθ is computed as:  
+
+![Screen Shot 2019-11-25 at 6.44.21 PM.png-23.7kB][4]
+
+Then the attacker tunes the model weights θ using both X(\yt) and X(yt) as follows: 
+
+![Screen Shot 2019-11-25 at 6.46.00 PM.png-42.1kB][5]
 
 
+Here the loss function Jθ(.) includes two terms. The first term ℓ(y, Fθ(x)) is the standard loss function of model training. The second term minimizes the difference in intermediate representation between the poisoned samples and the target samples. λ is the weight to balance the two terms.
 
+Once the above optimization converges, the output is the infected teacher model Fθ(x) with the trigger (m, ∆opt ) embedded.
 
 
   [1]: http://static.zybuluo.com/Shenao/tlkfjlmkdz183526a3ugotia/Screen%20Shot%202019-11-25%20at%206.05.31%20PM.png
   [2]: http://static.zybuluo.com/Shenao/g72amzoe3spv3lwr2ptf0tok/Screen%20Shot%202019-11-25%20at%206.13.28%20PM.png
+  [3]: http://static.zybuluo.com/Shenao/egy8pwk9y2gthbein07szf86/Screen%20Shot%202019-11-25%20at%206.40.48%20PM.png
+  [4]: http://static.zybuluo.com/Shenao/fxy4cgea5mp7vp3csilbf971/Screen%20Shot%202019-11-25%20at%206.44.21%20PM.png
+  [5]: http://static.zybuluo.com/Shenao/4jb2wd9tmp7quu3ym7fd18tg/Screen%20Shot%202019-11-25%20at%206.46.00%20PM.png
