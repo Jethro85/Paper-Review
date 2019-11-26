@@ -1,6 +1,7 @@
 ﻿# Latent Backdoor Attacks on Deep Neural Networks
 
-label: backdoor attack, transfer learning 
+label: backdoor attack, transfer learning  
+conference: CCS 2019
 
 ---
 Paper Link: http://people.cs.uchicago.edu/~ravenben/publications/pdf/pbackdoor-ccs19.pdf
