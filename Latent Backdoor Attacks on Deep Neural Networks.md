@@ -76,10 +76,10 @@ They consider four classification applications: Hand-written Digit Recognition (
 
 ![Screen Shot 2019-11-25 at 6.53.38 PM.png-172.7kB][6]
 
-The first three applications represent the scenario where the Teacher and Student tasks are the same, and the last application is where the two are different. For each task, the evaluation makes use of four disjoint datasets:
-• Xyt and X\yt are used by the attacker to inject latent backdoors into the Teacher model;
-• Xs is the training data used to train the Student model via transfer learning;
-• Xeval is used to evaluate the attack against the infected Student model.
+The first three applications represent the scenario where the Teacher and Student tasks are the same, and the last application is where the two are different. For each task, the evaluation makes use of four disjoint datasets:  
+• Xyt and X\yt are used by the attacker to inject latent backdoors into the Teacher model;  
+• Xs is the training data used to train the Student model via transfer learning;  
+• Xeval is used to evaluate the attack against the infected Student model.  
 
 The results of Multi-Image attack are as follows: 
 
