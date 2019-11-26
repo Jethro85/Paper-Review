@@ -47,9 +47,8 @@ Once the backdoor trigger is injected into the Teacher model, the attacker remov
 
 ### 3. Optimizing Trigger Generation & Injection (for step 2 and step 3)
 
-**Target-dependent Trigger Generation**  
-Given an input metric x, a poisoned sample of x is defined by:  
-A(x,m, ∆) = (1 − m) ◦ x + m ◦ ∆   
+**Target-dependent Trigger Generation:**  
+Given an input metric x, a poisoned sample of x is defined by: A(x,m, ∆) = (1 − m) ◦ x + m ◦ ∆   
 
 To generate a latent trigger against yt, the attacker searches for the trigger pattern ∆ that minimizes the difference between any poisoned non-target sample A(x,m, ∆), x ∈ X(\yt) and any clean target sample xt ∈ X(yt), in terms of their intermediate representation at layer Kt:  
 
@@ -57,7 +56,7 @@ To generate a latent trigger against yt, the attacker searches for the trigger p
 
 D(.) measures the dissimilarity between two internal representations in the feature space. Next, Fkθ(x) represents the intermediate representation for input x at the kth layer of the Teacher model Fθ(.). Finally, X(yt) and X(\yt) represent the target and non-target training data in Step 1. The output of the above optimization is ∆opt , the latent backdoor trigger against yt.   
 
-**Backdoor Injection**  
+**Backdoor Injection:**  
 Let θ represent the weights of the present Teacher model Fθ(x). Let ϕθ represent the recorded intermediate representation of class yt at layer Kt of the present model Fθ(x), and ϕθ is computed as:  
 
 ![Screen Shot 2019-11-25 at 6.44.21 PM.png-23.7kB][4]
@@ -71,8 +70,37 @@ Here the loss function Jθ(.) includes two terms. The first term ℓ(y, Fθ(x)) 
 Once the above optimization converges, the output is the infected teacher model Fθ(x) with the trigger (m, ∆opt ) embedded.  
 
 
+## EXPERIMENTS
+
+They consider four classification applications: Hand-written Digit Recognition (Digit), Traffic Sign Recognition (TrafficSign), Face Recognition (Face), and Iris Identification (Iris). 
+
+![Screen Shot 2019-11-25 at 6.53.38 PM.png-172.7kB][6]
+
+The first three applications represent the scenario where the Teacher and Student tasks are the same, and the last application is where the two are different. For each task, the evaluation makes use of four disjoint datasets:
+• Xyt and X\yt are used by the attacker to inject latent backdoors into the Teacher model;
+• Xs is the training data used to train the Student model via transfer learning;
+• Xeval is used to evaluate the attack against the infected Student model.
+
+The results of Multi-Image attack are as follows: 
+
+![Screen Shot 2019-11-25 at 6.56.16 PM.png-59.9kB][7]
+
+From the result, we can see that: Firstly, latent backdoor attack is highly effective on all four tasks, where the attack success rate is at least 96.6%, if not 100%; Secondly, Second, the model accuracy of the Student model trained on the infected Teacher model is comparable to that trained on the clean Teacher model. This means that the proposed latent backdoor attack does not compromise the model accuracy of the Student model.   
+
+They also consider the extreme case where the attacker is only able to obtain a single image of the target, i.e. |Xyt| = 1. 
+
+![Screen Shot 2019-11-25 at 6.59.51 PM.png-60.4kB][8]
+
+Results show that: Firstly, attack success rate is lower than that of the multi-image attack. This is as expected since having only a single image of the target class makes it harder to accurately extract its intermediate representations; Secondly, the degradation is much more significant on the small model (Digit) compared to the large models (TrafficSign, Face and Iris). This is because larger models offer higher capacity (or freedom) to tune the intermediate representation by updating the model weights, thus the trigger can still be successfully injected into the Teacher model.   
+
+They also validate and demonstrate the effectiveness of latent backdoors using 3 real-world tests on their models, using physical data and realistic constraints, including attacks on traffic sign recognition, iris identification, and facial recognition on public figures (politicians). Results show that their latent attack can also work well on real-world situations. 
+
+
   [1]: http://static.zybuluo.com/Shenao/tlkfjlmkdz183526a3ugotia/Screen%20Shot%202019-11-25%20at%206.05.31%20PM.png
   [2]: http://static.zybuluo.com/Shenao/g72amzoe3spv3lwr2ptf0tok/Screen%20Shot%202019-11-25%20at%206.13.28%20PM.png
   [3]: http://static.zybuluo.com/Shenao/egy8pwk9y2gthbein07szf86/Screen%20Shot%202019-11-25%20at%206.40.48%20PM.png
   [4]: http://static.zybuluo.com/Shenao/fxy4cgea5mp7vp3csilbf971/Screen%20Shot%202019-11-25%20at%206.44.21%20PM.png
   [5]: http://static.zybuluo.com/Shenao/4jb2wd9tmp7quu3ym7fd18tg/Screen%20Shot%202019-11-25%20at%206.46.00%20PM.png
+  [6]: http://static.zybuluo.com/Shenao/ta4uypeykski435bmeug3aa5/Screen%20Shot%202019-11-25%20at%206.53.38%20PM.png
+  [7]: http://static.zybuluo.com/Shenao/2iw5m0slvbp6e6hqfhxkjf7f/Screen%20Shot%202019-11-25%20at%206.56.16%20PM.png
+  [8]: http://static.zybuluo.com/Shenao/niz03ikfb22tsah62g1cfe5d/Screen%20Shot%202019-11-25%20at%206.59.51%20PM.png
