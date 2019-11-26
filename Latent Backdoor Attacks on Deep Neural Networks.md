@@ -85,7 +85,7 @@ The results of Multi-Image attack are as follows:
 
 ![Screen Shot 2019-11-25 at 6.56.16 PM.png-59.9kB][7]
 
-From the result, we can see that: Firstly, latent backdoor attack is highly effective on all four tasks, where the attack success rate is at least 96.6%, if not 100%; Secondly, Second, the model accuracy of the Student model trained on the infected Teacher model is comparable to that trained on the clean Teacher model. This means that the proposed latent backdoor attack does not compromise the model accuracy of the Student model.   
+From the result, we can see that: Firstly, latent backdoor attack is highly effective on all four tasks, where the attack success rate is at least 96.6%, if not 100%; Secondly, the model accuracy of the Student model trained on the infected Teacher model is comparable to that trained on the clean Teacher model. This means that the proposed latent backdoor attack does not compromise the model accuracy of the Student model.   
 
 They also consider the extreme case where the attacker is only able to obtain a single image of the target, i.e. |Xyt| = 1. 
 
