@@ -1,2 +1,2 @@
 # Paper-Review
-This is for the papers I review every week
+This repo is for the papers I read every week
