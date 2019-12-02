@@ -33,9 +33,20 @@ Above all, they conclude that **high randomness of the predicted numbers of pert
 ### 2. STRIP TROJAN DETECTION SYSTEM DESIGN 
 
 ![1.JPG-106.1kB][4]
-The above picture shows the run-time STRIP trojan detection system. The perturbation step generates N perturbed inputs {xp1,......,xpN} corresponding to one given incoming input x. Each perturbed input is a superimposed image of the input x (replica) and an image randomly drawn from the user held-out testing dataset, Dtest. All the perturbed inputs along with x itself are concurrently fed into the deployed DNN model, FΘ(xi). According to the input x, the DNN model predicts its label z. **At the same time, the DNN model determines whether the input x is trojaned or not based on the observation on predicted classes to all N perturbed inputs {xp1,......,xpN} that forms a set Dp.** In particular, the randomness (entropy) of the predicted classes is used to greatly facilitate the judgment on whether the input is trojaned or not. (In this paper, they use Shannon entropy to express the randomness of the predicted labels of all perturbed inputs {xp1 ,......, xpN} corresponding to a given incoming input x.)
+The above picture shows the run-time STRIP trojan detection system. The perturbation step generates N perturbed inputs {xp1,......,xpN} corresponding to one given incoming input x. Each perturbed input is a superimposed image of the input x (replica) and an image randomly drawn from the user held-out testing dataset, Dtest. All the perturbed inputs along with x itself are concurrently fed into the deployed DNN model, FΘ(xi). According to the input x, the DNN model predicts its label z. **At the same time, the DNN model determines whether the input x is trojaned or not based on the observation on predicted classes to all N perturbed inputs {xp1,......,xpN} that forms a set Dp.** In particular, the randomness (entropy) of the predicted classes is used to greatly facilitate the judgment on whether the input is trojaned or not. 
+
+(In this paper, they use Shannon entropy to express the randomness of the predicted labels of all perturbed inputs {xp1 ,......, xpN} corresponding to a given incoming input x.)
 
 ## EXPERIMENTS
+
+
+
+
+
+## COMMENT
+STRIP are performed during run-time checking incoming input to detect whether the input is trojaned or not when the model is already deployed. From author's comparision with other three trojan detection works: Activation Clustering, Neural Cleanse and SentiNet, we can see that **STRIP method is effcient in terms of computation cost and time overhead**. What's more, **the STRIP is also insensitive to trojan trigger size.**  
+(While AC and our STRIP are insensitive to trojan trigger size, the AC appears to be impractical in reality as it assumes the trojaned data is in hand)   
+(AC and Neural Cleanse are performed offline prior to the model deployment to directly detect whether the model has been trojaned or not)   
 
 
   [1]: http://static.zybuluo.com/Shenao/qmnd5x6pmu8a9i6avzolqlcc/1.JPG
