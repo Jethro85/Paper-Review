@@ -48,7 +48,9 @@ From the picture, we can see that **the trojaned input always has a small entrop
 
 ## COMMENT
 STRIP are performed during run-time checking incoming input to detect whether the input is trojaned or not when the model is already deployed. From author's comparision with other three trojan detection works: Activation Clustering, Neural Cleanse and SentiNet, we can see that **STRIP method is effcient in terms of computation cost and time overhead**. What's more, **the STRIP is also insensitive to trojan trigger size.**  
+
 (While AC and our STRIP are insensitive to trojan trigger size, the AC appears to be impractical in reality as it assumes the trojaned data is in hand)   
+
 (AC and Neural Cleanse are performed offline prior to the model deployment to directly detect whether the model has been trojaned or not)   
 
 
