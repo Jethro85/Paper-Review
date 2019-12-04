@@ -13,8 +13,19 @@ This repo contains notes and short summaries of some DNN security related papers
 
 - [x] Design and Evaluation of a Multi-Domain Trojan Detection Method on Deep Neural Networks (2019): [[Paper](https://arxiv.org/pdf/1911.10312.pdf)] [[Notes](https://github.com/Jethro85/Paper-Review/blob/master/Design%20and%20Evaluation%20of%20a%20Multi-Domain%20Trojan%20Detection%20Method%20on%20Deep%20Neural%20Networks.md)]
 
-- [x] TABOR: A Highly Accurate Approach to Inspecting and Restoring Trojan Backdoors in AI Systems: 
+- [ ] DeepInspect: A Black-box Trojan Detection and Mitigation Framework for Deep Neural Networks (IJCAI 2019):
+[[Paper](https://cseweb.ucsd.edu/~jzhao/files/DeepInspect-IJCAI2019.pdf)]
+
+- [ ] ABS: Scanning Neural Networks for Back-doors by Artificial Brain Stimulation (CCS 2019): [[Paper](https://www.cs.purdue.edu/homes/taog/docs/CCS19.pdf)]
+
+- [x] TABOR: A Highly Accurate Approach to Inspecting and Restoring Trojan Backdoors in AI Systems (2019): 
 [[paper](https://arxiv.org/pdf/1908.01763.pdf)] [[Notes](https://github.com/Jethro85/Paper-Review/blob/master/TABOR-%20A%20Highly%20Accurate%20Approach%20to%20Inspecting%20and%20Restoring%20Trojan%20Backdoors%20in%20AI%20Systems.md)]
+
+- [ ] Detecting Backdoor Attacks on Deep Neural Networks by Activation Clustering (2018): [[Paper](https://arxiv.org/pdf/1811.03728.pdf)]
+
+
+
+
 
 ## Watermarking
 - [x] Leveraging Unlabeled Data for Watermark Removal of Deep Neural Networks (ICML 2019): [[Paper](https://ruoxijia.github.io/assets/papers/watermark_removal_icml19_workshop.pdf)] [[Notes](https://github.com/Jethro85/Paper-Review/blob/master/Leveraging%20Unlabeled%20Data%20for%20Watermark%20Removal%20of%20Deep%20Neural%20Networks.md)]
