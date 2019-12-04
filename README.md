@@ -1,5 +1,5 @@
 ﻿# Paper-Review
-This repo contains notes and short summaries of some ML security related papers I come across.
+This repo contains notes and short summaries of some DNN security related papers I come across.
 
 ## Backdoor Attack
 
