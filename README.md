@@ -8,8 +8,8 @@ This repo contains notes and short summaries of some ML security related papers 
 ## Backdoor Detection and Mitigation
 - [x] Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks: [[Paper](https://sites.cs.ucsb.edu/~bolunwang/assets/docs/backdoor-sp19.pdf)] [[Code](https://github.com/bolunwang/backdoor)] [[Notes](https://github.com/Jethro85/Paper-Review/blob/master/Neural%20Cleanse-%20Identifying%20and%20Mitigating%20Backdoor%20Attacks%20in%20Neural%20Networks.md)]
 
-- [x] STRIP: A Defence Against Trojan Attacks on Deep Neural Networks: 
-[[Paper](https://arxiv.org/pdf/1902.06531.pdf)] [[Notes](https://github.com/Jethro85/Paper-Review/blob/master/STRIP-%20A%20Defence%20Against%20Trojan%20Attacks%20on%20Deep%20Neural%20Networks.md)]
+- [x] STRIP: A Defence Against Trojan Attacks on Deep Neural Networks (2019 ACSAC): 
+[[Paper](https://arxiv.org/pdf/1902.06531.pdf)] [[Code](https://github.com/garrisongys/STRIP)] [[Notes](https://github.com/Jethro85/Paper-Review/blob/master/STRIP-%20A%20Defence%20Against%20Trojan%20Attacks%20on%20Deep%20Neural%20Networks.md)]
 
 - [x] TABOR: A Highly Accurate Approach to Inspecting and Restoring Trojan Backdoors in AI Systems: 
 [[paper](https://arxiv.org/pdf/1908.01763.pdf)] [[Notes](https://github.com/Jethro85/Paper-Review/blob/master/TABOR-%20A%20Highly%20Accurate%20Approach%20to%20Inspecting%20and%20Restoring%20Trojan%20Backdoors%20in%20AI%20Systems.md)]
