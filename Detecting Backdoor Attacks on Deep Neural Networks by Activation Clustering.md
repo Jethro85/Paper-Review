@@ -23,12 +23,14 @@ While backdoor and target samples receive the same classification by the poisone
 
 In the case of standard samples from the target class, the network identifies features in the input that it has learned correspond to the target class. In the case of backdoor samples, it identifies features associated with the source class and the backdoor trigger, which causes it to classify the input as the target class. This difference in mechanism should be evident in the network activations, which represent how the network made its “decisions”.  
 
+![Screen Shot 2019-12-09 at 10.09.39 PM.png-453.2kB][1]
 
 The above figure shows activations of the last hidden neural network layer for clean and legitimate data projected onto their first three principle components. Figure a shows the activations of class 6 in the poisoned MNIST dataset, b shows the activations of the poisoned speed limit class in the LISA dataset, and c shows the activations of the poisoned negative class for Rotten Tomatoes movie reviews. In
 each, it is easy to see that the activations of the poisonous and legitimate data break out into two distinct clusters. In contrast, Figure d displays the activations of the positive class, which was not targeted with poison. Here we see that the activations do not break out into two distinguishable clusters.  
 
 ### 2. Obtain the activations 
 
+![Screen Shot 2019-12-10 at 1.48.33 PM.png-120.1kB][2]
 
 The Algorithm they use to obtain the activations are shown above. First, the neural network is trained using untrusted data that potentially includes poisonous samples. Then, the network is queried using the training data and the resulting activations of the last hidden layer are retained. *Analyzing the activations of the last hidden layer was enough to detect poison.*   
 
@@ -50,6 +52,7 @@ They did experiments on the MNIST, LISA, and Rotten Tomatoes datasets. After eac
 
 The results of backdoor detection are shown below: 
 
+![Screen Shot 2019-12-10 at 1.50.27 PM.png-68.9kB][3]
 
 From the results of MNIST experiments with 10% of the data poisoned, we can see that both accuracy and F1 score are nearly 100% for every class. Nearly identical results were obtained for 15% and 33% poisoned data. In contrast, clustering the raw inputs on 10% poisoned data was only able to achieve a 58.6% accuracy and a 15.8% F1 score when 10% of each class was poisoned. When 33% of each class was poisoned, clustering the raw data performed better with a 90.8% accuracy and an 86.38% F1 score but was still not on par with AC’s near perfect detection rates.  
 On the LISA data set, they achieved 100% accuracy and an F1 score of 100% in detecting poisonous samples where 33% and 15% of the stop sign class was poisoned. For our text-based experiments, they also achieved 100% accuracy and F1 score in detecting poisonous samples in a data set where 10% of the negative class was poisoned.
@@ -61,3 +64,8 @@ On the LISA data set, they achieved 100% accuracy and an F1 score of 100% in det
 Detecting the backdoor according to activations is a good idea. Through a variety of experiments on two image and one text datasets, they demonstrate the effectiveness of the AC method at detecting and repairing backdoors.
 
 However, their repair method is based on retrain. It's true retraining using training data can mitigate the backdoor. But for a larger dataset, retraining for a large epoches is not efficient. 
+
+
+  [1]: http://static.zybuluo.com/Shenao/ofmiedpg9ub2k2rkuh1pkvk5/Screen%20Shot%202019-12-09%20at%2010.09.39%20PM.png
+  [2]: http://static.zybuluo.com/Shenao/cdk1se2aa701bqup0575a2bd/Screen%20Shot%202019-12-10%20at%201.48.33%20PM.png
+  [3]: http://static.zybuluo.com/Shenao/egswcitkv4r4gudro2bzm186/Screen%20Shot%202019-12-10%20at%201.50.27%20PM.png
