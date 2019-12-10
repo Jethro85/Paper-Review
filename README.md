@@ -14,14 +14,14 @@ This repo contains notes and short summaries of some DNN security related papers
 - [x] Design and Evaluation of a Multi-Domain Trojan Detection Method on Deep Neural Networks (2019): [[Paper](https://arxiv.org/pdf/1911.10312.pdf)] [[Notes](https://github.com/Jethro85/Paper-Review/blob/master/Design%20and%20Evaluation%20of%20a%20Multi-Domain%20Trojan%20Detection%20Method%20on%20Deep%20Neural%20Networks.md)]
 
 - [x] DeepInspect: A Black-box Trojan Detection and Mitigation Framework for Deep Neural Networks (IJCAI 2019):
-[[Paper](https://cseweb.ucsd.edu/~jzhao/files/DeepInspect-IJCAI2019.pdf)] [[Notes]()] [[Citation]()]
+[[Paper](https://cseweb.ucsd.edu/~jzhao/files/DeepInspect-IJCAI2019.pdf)] [[Notes]()] [[Citation](https://dblp.uni-trier.de/rec/bibtex/conf/ijcai/ChenFZK19)]
 
 - [ ] ABS: Scanning Neural Networks for Back-doors by Artificial Brain Stimulation (CCS 2019): [[Paper](https://www.cs.purdue.edu/homes/taog/docs/CCS19.pdf)]
 
 - [x] TABOR: A Highly Accurate Approach to Inspecting and Restoring Trojan Backdoors in AI Systems (2019): 
 [[Paper](https://arxiv.org/pdf/1908.01763.pdf)] [[Notes](https://github.com/Jethro85/Paper-Review/blob/master/TABOR-%20A%20Highly%20Accurate%20Approach%20to%20Inspecting%20and%20Restoring%20Trojan%20Backdoors%20in%20AI%20Systems.md)]
 
-- [x] Detecting Backdoor Attacks on Deep Neural Networks by Activation Clustering (2018 AAAI): [[Paper](https://arxiv.org/pdf/1811.03728.pdf)] [[Code](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/examples/mnist_poison_detection.py)] [[Notes](https://github.com/Jethro85/Paper-Review/blob/master/Detecting%20Backdoor%20Attacks%20on%20Deep%20Neural%20Networks%20by%20Activation%20Clustering.md)] [[Citation](https://dblp.uni-trier.de/rec/bibtex/conf/aaai/ChenCBLELMS19)]
+- [x] Detecting Backdoor Attacks on Deep Neural Networks by Activation Clustering (2019 AAAI): [[Paper](https://arxiv.org/pdf/1811.03728.pdf)] [[Code](https://github.com/IBM/adversarial-robustness-toolbox/blob/master/examples/mnist_poison_detection.py)] [[Notes](https://github.com/Jethro85/Paper-Review/blob/master/Detecting%20Backdoor%20Attacks%20on%20Deep%20Neural%20Networks%20by%20Activation%20Clustering.md)] [[Citation](https://dblp.uni-trier.de/rec/bibtex/conf/aaai/ChenCBLELMS19)]
 
 
 
