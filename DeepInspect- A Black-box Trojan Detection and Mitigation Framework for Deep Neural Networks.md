@@ -20,7 +20,7 @@ They propose DeepInspect, the first practical Trojan detection framework that de
 ### 1. Overview of trojan detection
 The key intuition behind DeepInspect is shown below. The process of Trojan insertion can be considered as adding redundant data points near the legitimate ones and labeling them as the attack target. The movement from the original data point to the malicious one is the trigger used in the backdoor attack. As a result of Trojan insertion, one can observe from the figure that the required perturbation to transform legitimate data into samples belonging to the attack target is smaller compared to the one in the corresponding benign model. DeepInspect identifies the existence of such ‘small’ triggers as the ‘footprint’ left by Trojan insertion and recovers potential triggers to extract the perturbation statistics.
 
-
+![Screen Shot 2019-12-10 at 1.45.30 PM.png-153.4kB][1]
 
 
 DeepInspect (DI) consists of three main steps: model inversion to recover a substitution training dataset, trigger reconstruction using a conditional Generative Adversarial Network (cGAN), and anomaly detection based on statistical hypothesis testing. 
@@ -40,7 +40,7 @@ The key idea of DeepInspect is to train a conditional generator that learns the 
 
 D(x + G(z, t)) = t. (2)  
 
-![Screen Shot 2019-12-10 at 12.11.51 AM.png-41.3kB][1]
+![Screen Shot 2019-12-10 at 12.11.51 AM.png-41.3kB][2]
 
 The above picture shows the high-level overview of the trigger generator. 
 
@@ -82,4 +82,6 @@ The large gap of deviation factors between an infected DNN and the corresponding
 
 (They also do experiments about the Sensitivity to Trigger Size and Sensitivity to Number of Trojan Targets. Results show that DeepInspect work wel)
 
-  [1]: http://static.zybuluo.com/Shenao/q9oisul4oawbtyqg3p0vh6mf/Screen%20Shot%202019-12-10%20at%2012.11.51%20AM.png
+
+  [1]: http://static.zybuluo.com/Shenao/3l7edx8yh4mfvqlpidl0fijf/Screen%20Shot%202019-12-10%20at%201.45.30%20PM.png
+  [2]: http://static.zybuluo.com/Shenao/q9oisul4oawbtyqg3p0vh6mf/Screen%20Shot%202019-12-10%20at%2012.11.51%20AM.png
