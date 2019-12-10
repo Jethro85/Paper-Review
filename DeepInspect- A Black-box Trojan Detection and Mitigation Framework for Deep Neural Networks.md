@@ -74,6 +74,9 @@ After generating triggers for each class using the trained generator in the seco
 
 ## EXPERIMENTS
 
+![Screen Shot 2019-12-10 at 1.53.04 PM.png-194.3kB][3]
+
+
 To validate the feasibility of DeepInspect’s anomaly detection, they measure the deviation factor for both benign and trojaned models and show the results in above Figure. The queriedmodel is determined to be ‘infected’ if its deviation factor is
 larger than the cutoff threshold. Using a significance level
 of α = 0.05 (corresponding to the cutoff threshold c = 2), DI yields df > 2 for all infected models and df < 2 for all benign models as shown in the picture. Therefore, DI satisfies ‘effectiveness’ criterion by achieving 0% false positive rates and 0% false negative rate across all benchmarks.
@@ -85,3 +88,4 @@ The large gap of deviation factors between an infected DNN and the corresponding
 
   [1]: http://static.zybuluo.com/Shenao/3l7edx8yh4mfvqlpidl0fijf/Screen%20Shot%202019-12-10%20at%201.45.30%20PM.png
   [2]: http://static.zybuluo.com/Shenao/q9oisul4oawbtyqg3p0vh6mf/Screen%20Shot%202019-12-10%20at%2012.11.51%20AM.png
+  [3]: http://static.zybuluo.com/Shenao/udhc8ask94x8xsi8g3uve5ku/Screen%20Shot%202019-12-10%20at%201.53.04%20PM.png
