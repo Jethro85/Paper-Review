@@ -18,6 +18,10 @@ They propose DeepInspect, the first practical Trojan detection framework that de
 
 ## MAIN IDEA  
 ### 1. Overview of trojan detection
+The key intuition behind DeepInspect is shown below. The process of Trojan insertion can be considered as adding redundant data points near the legitimate ones and labeling them as the attack target. The movement from the original data point to the malicious one is the trigger used in the backdoor attack. As a result of Trojan insertion, one can observe from the figure that the required perturbation to transform legitimate data into samples belonging to the attack target is smaller compared to the one in the corresponding benign model. DeepInspect identifies the existence of such ‘small’ triggers as the ‘footprint’ left by Trojan insertion and recovers potential triggers to extract the perturbation statistics.
+
+
+
 
 DeepInspect (DI) consists of three main steps: model inversion to recover a substitution training dataset, trigger reconstruction using a conditional Generative Adversarial Network (cGAN), and anomaly detection based on statistical hypothesis testing. 
 
@@ -36,9 +40,9 @@ The key idea of DeepInspect is to train a conditional generator that learns the 
 
 D(x + G(z, t)) = t. (2)  
 
+![Screen Shot 2019-12-10 at 12.11.51 AM.png-41.3kB][1]
 
-
-The above picture shows the high-level overview of our trigger generator. 
+The above picture shows the high-level overview of the trigger generator. 
 
 Recall that DeepInspect deploys the pre-trained model as the fixed discriminator D. As such, **the key challenge of trigger generation is to formulate the loss to train the conditional generator**. Since the threat model assumes that the input dimension and the number of output classes are known to the defender, he can find a feasible topology of G that yields triggers ∆ with a consistent shape as the inversed input x. 
 
@@ -65,8 +69,17 @@ People can select hyper-parameters γ1, γ2 to ensure that the output trigger of
 
 
 ### 4. Anomaly Detection
+After generating triggers for each class using the trained generator in the second step, DI deploys hypothesis testing and robust statistics to detect the existence of outliers in trigger perturbations. More specifically, they use a variant of ‘Double Median Absolute Deviation’ (DMAD) as the detection criteria. (To find more specific things in the paper)
 
 
+## EXPERIMENTS
 
+To validate the feasibility of DeepInspect’s anomaly detection, they measure the deviation factor for both benign and trojaned models and show the results in above Figure. The queriedmodel is determined to be ‘infected’ if its deviation factor is
+larger than the cutoff threshold. Using a significance level
+of α = 0.05 (corresponding to the cutoff threshold c = 2), DI yields df > 2 for all infected models and df < 2 for all benign models as shown in the picture. Therefore, DI satisfies ‘effectiveness’ criterion by achieving 0% false positive rates and 0% false negative rate across all benchmarks.
 
+The large gap of deviation factors between an infected DNN and the corresponding benign one indicates that df is an effective metric for Trojan detection. To corroborate the key intuition utilized by DI (Figure 1), they measure the perturbation] levels of the triggers recovered by DeepInspect’s conditional generator and visualize their distributions in above figure. It can be observed that the perturbation magnitude of the infected label (denoted by the triangle) is substantially smaller than the one of uninfected classes, thus can be used by robust statistics in our detection. 
 
+(They also do experiments about the Sensitivity to Trigger Size and Sensitivity to Number of Trojan Targets. Results show that DeepInspect work wel)
+
+  [1]: http://static.zybuluo.com/Shenao/q9oisul4oawbtyqg3p0vh6mf/Screen%20Shot%202019-12-10%20at%2012.11.51%20AM.png
