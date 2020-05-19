@@ -1,4 +1,4 @@
-﻿# Paper-Review
+﻿# Deepxplore: Automated whitebox testing of deep learning systemsPaper-Review
 This repo contains notes and short summaries of some DNN security related papers I come across.
 
 ## Backdoor Attack
@@ -36,4 +36,9 @@ This repo contains notes and short summaries of some DNN security related papers
 ## DNN Testing
 
 - [ ] DEEPSEC: deciding equivalence properties in security protocols theory and practice (S&P 2018): [[Paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8418623)]
+- [ ] Guiding deep learning system testing using surprise adequacy (ICSE 2019): [[Paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8812069)]
+- [ ] DeepGauge: Multi-granularity testing criteria for deep learning systems (ASE 2018): [[Paper](https://dl.acm.org/doi/pdf/10.1145/3238147.3238202)]
+- [ ] DeepXplore: Automated whitebox testing of deep learning systems (SOSP 2017) [[Paper](https://dl.acm.org/doi/pdf/10.1145/3132747.3132785)]
+- [ ] DeepTest: Automated testing of deep-neural-network-driven autonomous cars (ICSE 2018) [[Paper](https://dl.acm.org/doi/pdf/10.1145/3180155.3180220)]
+- [ ] DeepHunter: a coverage-guided fuzz testing framework for deep neural networks (ISSTA 2019) [[Paper](https://dl.acm.org/doi/pdf/10.1145/3293882.3330579)]
 
