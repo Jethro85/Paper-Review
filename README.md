@@ -5,7 +5,26 @@ This repo contains notes and short summaries of some DNN security related papers
 
 - [x] Latent Backdoor Attacks on Deep Neural Networks (CCS 2019): [[Paper](http://people.cs.uchicago.edu/~ravenben/publications/pdf/pbackdoor-ccs19.pdf)] [[Notes](https://github.com/Jethro85/Paper-Review/blob/master/Latent%20Backdoor%20Attacks%20on%20Deep%20Neural%20Networks.md)] [[Citation](https://dblp.uni-trier.de/rec/bibtex/conf/ccs/YaoLZZ19)]
 
+  
+
+## Textual Adversarial Attack
+
+### Char-level Attack
+
+- [ ] TEXTBUGGER: Generating Adversarial Text Against Real-world Applications (NDSS 2019): [[Paper](https://arxiv.org/pdf/1812.05271.pdf)]
+
+
+
+
+
+### Word-level Attack
+
+
+
+
+
 ## Backdoor Detection and Mitigation
+
 - [x] Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks (S&P 2019): [[Paper](https://sites.cs.ucsb.edu/~bolunwang/assets/docs/backdoor-sp19.pdf)] [[Code](https://github.com/bolunwang/backdoor)] [[Notes](https://github.com/Jethro85/Paper-Review/blob/master/Neural%20Cleanse-%20Identifying%20and%20Mitigating%20Backdoor%20Attacks%20in%20Neural%20Networks.md)] [[Citation](https://dblp.uni-trier.de/rec/bibtex/conf/sp/WangYSLVZZ19)]
 
 - [x] STRIP: A Defence Against Trojan Attacks on Deep Neural Networks (2019 ACSAC): 
