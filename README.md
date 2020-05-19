@@ -29,6 +29,11 @@ This repo contains notes and short summaries of some DNN security related papers
 
 ## Watermarking
 - [x] Leveraging Unlabeled Data for Watermark Removal of Deep Neural Networks (ICML 2019): [[Paper](https://ruoxijia.github.io/assets/papers/watermark_removal_icml19_workshop.pdf)] [[Notes](https://github.com/Jethro85/Paper-Review/blob/master/Leveraging%20Unlabeled%20Data%20for%20Watermark%20Removal%20of%20Deep%20Neural%20Networks.md)]
-
 - [x] Turning Your Weakness Into a Strength: Watermarking Deep Neural Networks by Backdooring (usenix 2018): [[Paper](https://arxiv.org/pdf/1802.04633.pdf)] [[Code](https://github.com/adiyoss/WatermarkNN)] [[Blog]( https://medium.com/@carstenbaum/the-ubiquity-of-machine-learning-and-its-challenges-to-intellectual-property-dc38e7d66b05)] [[Notes](https://github.com/Jethro85/Paper-Review/blob/master/Turning%20Your%20Weakness%20Into%20a%20Strength-%20Watermarking%20Deep%20Neural%20Networks%20by%20Backdooring.md)]  [[Citation](https://dblp.uni-trier.de/rec/bibtex/conf/uss/AdiBCPK18)]
+
+
+
+## DNN Testing
+
+- [ ] DEEPSEC: deciding equivalence properties in security protocols theory and practice (S&P 2018): [[Paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8418623)]
 
