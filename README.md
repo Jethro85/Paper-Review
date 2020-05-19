@@ -41,4 +41,5 @@ This repo contains notes and short summaries of some DNN security related papers
 - [ ] DeepXplore: Automated whitebox testing of deep learning systems (SOSP 2017): [[Paper](https://dl.acm.org/doi/pdf/10.1145/3132747.3132785)]
 - [ ] DeepTest: Automated testing of deep-neural-network-driven autonomous cars (ICSE 2018): [[Paper](https://dl.acm.org/doi/pdf/10.1145/3180155.3180220)]
 - [ ] DeepHunter: a coverage-guided fuzz testing framework for deep neural networks (ISSTA 2019): [[Paper](https://dl.acm.org/doi/pdf/10.1145/3293882.3330579)]
+- [ ] There is limited correlation between coverage and robustness for deep neural networks (ASE 2019): [[Paper](https://arxiv.org/pdf/1911.05904.pdf)]
 
