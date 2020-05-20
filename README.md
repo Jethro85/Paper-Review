@@ -1,15 +1,19 @@
-﻿# Deepxplore: Automated whitebox testing of deep learning systemsPaper-Review
-This repo contains notes and short summaries of some DNN security related papers I come across.
+﻿# Paper-Review
+This repo contains notes and short summaries of some DNN security and Software Engineering & AI related papers I come across.
 
-## Backdoor Attack
+
+
+## Attacks
+
+### Backdoor Attack
 
 - [x] Latent Backdoor Attacks on Deep Neural Networks (CCS 2019): [[Paper](http://people.cs.uchicago.edu/~ravenben/publications/pdf/pbackdoor-ccs19.pdf)] [[Notes](https://github.com/Jethro85/Paper-Review/blob/master/Latent%20Backdoor%20Attacks%20on%20Deep%20Neural%20Networks.md)] [[Citation](https://dblp.uni-trier.de/rec/bibtex/conf/ccs/YaoLZZ19)]
 
   
 
-## Textual Adversarial Attack
+### Textual Adversarial Attack
 
-### Char-level Attack
+#### Char-level Attack
 
 - [ ] TEXTBUGGER: Generating Adversarial Text Against Real-world Applications (NDSS 2019): [[Paper](https://arxiv.org/pdf/1812.05271.pdf)]
 - [ ] Text processing like humans do: Visually attacking and shielding NLP systems (NAACL 2019): [[Paper](https://arxiv.org/pdf/1903.11508.pdf)]
@@ -18,7 +22,7 @@ This repo contains notes and short summaries of some DNN security related papers
 
 
 
-### Word-level Attack
+#### Word-level Attack
 
 - [ ] Generating natural language adversarial examples (EMNLP 2018): [[Paper](https://arxiv.org/pdf/1804.07998.pdf)]
 - [ ] Deep text classification can be fooled (IJCAI 2018): [[Paper](https://arxiv.org/ftp/arxiv/papers/1704/1704.08006.pdf)]
@@ -56,7 +60,9 @@ This repo contains notes and short summaries of some DNN security related papers
 
 
 
-## DNN Testing
+## Software Engineering and AI
+
+### DNN Testing
 
 - [ ] DEEPSEC: deciding equivalence properties in security protocols theory and practice (S&P 2018): [[Paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8418623)]
 - [ ] Guiding deep learning system testing using surprise adequacy (ICSE 2019): [[Paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8812069)]
@@ -68,7 +74,7 @@ This repo contains notes and short summaries of some DNN security related papers
 
 
 
-## **NMT Testing**
+### **NMT Testing**
 
 - [ ] Structure-Invariant Testing for Machine Translation (ICSE 2020): [[Paper](https://arxiv.org/pdf/1907.08710.pdf)]
 - [ ] Automatic Testing and Improvement of Machine Translation (ICSE 2020): [[Paper](https://arxiv.org/pdf/1910.02688.pdf)]
